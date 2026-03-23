@@ -498,16 +498,15 @@ function startProcessing(){
 }
 
 function showDone(){
-  const price = (selectedCoins * data-coins=).toFixed(2);
-  doneAmount.textContent = data-coins=;
+  doneAmount.textContent = selectedCoins.toLocaleString(); // show coins
+
   const u = (document.getElementById('username').value || 'your_username').replace('@','');
   doneUser.textContent = '@' + u;
-  // hide processing and order, then show done
+
   hide(ovProc);
   hide(ovOrder);
   show(ovDone);
-}
-
+  }
 // done back -> return to main screen
 if(doneBackBtn){
   doneBackBtn.addEventListener('click', ()=>{
