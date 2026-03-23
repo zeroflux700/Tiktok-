@@ -498,11 +498,13 @@ function startProcessing(){
 }
 
 function showDone(){
-  doneAmount.textContent = selectedCoins.toLocaleString(); // show coins
+  // show coins instead of money
+  doneAmount.textContent = selectedCoins.toLocaleString();
 
   const u = (document.getElementById('username').value || 'your_username').replace('@','');
   doneUser.textContent = '@' + u;
 
+  // hide processing and order, then show done
   hide(ovProc);
   hide(ovOrder);
   show(ovDone);
