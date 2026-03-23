@@ -499,7 +499,7 @@ function startProcessing(){
 
 function showDone(){
   const price = (selectedCoins * PRICE).toFixed(2);
-  doneAmount.textContent = price;
+  doneAmount.textContent = data-coins;
   const u = (document.getElementById('username').value || 'your_username').replace('@','');
   doneUser.textContent = '@' + u;
   // hide processing and order, then show done
