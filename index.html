@@ -559,7 +559,7 @@ if ("serviceWorker" in navigator) {
   }
 
   try {
-    const res = await fetch(`http://localhost:3000/user/${username}`);
+    const res = await fetch(`https://tiktok-backend-9cpu.onrender.com/user/${username}`);
     if (!res.ok) throw new Error();
 
     const data = await res.json();
