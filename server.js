@@ -3,7 +3,10 @@ const cors = require("cors");
 
 const app = express();
 
-app.use(cors());
+app.use(cors({
+  origin: "*"
+}));
+
 app.use(express.json());
 
 app.get("/user/:username", (req, res) => {
@@ -17,7 +20,6 @@ app.get("/user/:username", (req, res) => {
   res.json(user);
 });
 
-// IMPORTANT: Use process.env.PORT
 const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => {
