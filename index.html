@@ -550,6 +550,31 @@ if ("serviceWorker" in navigator) {
       .catch(err => console.log("SW failed", err));
   });
 }
+  async function fetchUser() {
+  const username = document.getElementById("username").value;
+
+  if (!username) {
+    alert("Enter a username");
+    return;
+  }
+
+  try {
+    const res = await fetch(`http://localhost:3000/user/${username}`);
+    if (!res.ok) throw new Error();
+
+    const data = await res.json();
+
+    // Update UI
+    document.getElementById("doneUser").textContent = "@" + data.username;
+
+    // Optional avatar
+    const avatar = document.getElementById("avatar");
+    if (avatar) avatar.src = data.avatar;
+
+  } catch (err) {
+    alert("User not found");
+  }
+    }
 
 </script>
 </body>
