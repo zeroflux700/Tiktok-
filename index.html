@@ -564,17 +564,12 @@ if ("serviceWorker" in navigator) {
 
     const data = await res.json();
 
-    // Update UI
-    document.getElementById("doneUser").textContent = "@" + data.username;
-
-    // Optional avatar
-    const avatar = document.getElementById("avatar");
-    if (avatar) avatar.src = data.avatar;
+    alert(`User found: @${data.username}`);
 
   } catch (err) {
     alert("User not found");
   }
-    }
+      }
 
 </script>
 </body>
