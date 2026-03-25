@@ -171,7 +171,18 @@ function createTx(type, amount, user){
 
   txList.prepend(el);
 }
-
+<button id="transferBtn" style="
+  width:100%;
+  padding:14px;
+  border:none;
+  border-radius:20px;
+  background:#ff2d2d;
+  color:#fff;
+  font-weight:600;
+  margin-top:20px;
+">
+  Transfer
+</button>
 /* RANDOM USER */
 function randomUser(){
   return "user" + Math.floor(Math.random()*9999);
